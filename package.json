@@ -12,15 +12,15 @@
         "commands": [
             {
                 "command": "autoArray.definition",
-                "title": "Create an array definition"
+                "title": "Generate an array definition"
             },
             {
                 "command": "autoArray.output",
-                "title": "Create an array output to cout"
+                "title": "Generate an array output to cout"
             },
             {
                 "command": "autoArray.input",
-                "title": "Create an array input from cin"
+                "title": "Generate an array input from cin"
             }
         ]
     },

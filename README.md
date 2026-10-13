@@ -2,9 +2,10 @@
 # Cpp auto array
 ## General description
 This extension adds free commands to VS Code, that can:
-    1. Write definition of array by type, name and elements
-    2. Write reading array from cin by type and name
-    3. Write printing array to cout by name
+1. Generate definition of array by type, name and elements
+2. Generate printing array to cout by name
+3. Generate reading array from cin by type and name
+In c++ language of standart 11 or higher
 ## Installation for developement
 To start developement:
 ```
@@ -15,7 +16,7 @@ To compile extension:
 npm run compile
 ```
 ## Installation for usage
-To get VSIX
+To get VSIX:
 ```
 npm install
 npm run compile
