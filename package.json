@@ -1,0 +1,32 @@
+{
+    "name": "cpp-auto-array",
+    "version": "0.0.1",
+    "scripts": {
+        "compile": "tsc -p ./"
+    },
+    "main": "./out/extension.js",
+    "engines": {
+        "vscode": "^1.100.0"
+    },
+    "contributes": {
+        "commands": [
+            {
+                "command": "autoArray.definition",
+                "title": "Create an array definition"
+            },
+            {
+                "command": "autoArray.output",
+                "title": "Create an array output to cout"
+            },
+            {
+                "command": "autoArray.input",
+                "title": "Create an array input from cin"
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.100.0",
+        "@types/node": "16.x",
+        "typescript": "^4.9.4"
+    }
+}
