@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext){
     // Generates a defenition of an array with elements of chosen type, with chosen name, with elements {element1, element2...}
     // Command Palette name: Generate an array of chosen type and size definition
     // Usage: <type> <name> <element1> <element2>...
-    const def_command = vscode.commands.registerCommand('autoArray.definition', async () =>{
+    const def_command = vscode.commands.registerCommand('autoArray.definition',  () =>{
         const editor = vscode.window.activeTextEditor;
 
         if(!editor){
@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext){
         }
         array_def = array_def+"};";
 
-        const succes = await editor.edit(edit_builder => {
+        const succes =editor.edit(edit_builder => {
             edit_builder.replace(selection, array_def);
         });
         if(!succes) {
@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext){
     // Generates a printing of an array with chosen name to cout. Elements divided with space, printing std::endl at the end of array
     // Command Palette name: Generate an array output to cout
     // Usage: <name>
-    const output_command = vscode.commands.registerCommand('autoArray.output', async () =>{
+    const output_command = vscode.commands.registerCommand('autoArray.output', () =>{
         const editor = vscode.window.activeTextEditor;
 
         if(!editor){
@@ -101,7 +101,7 @@ export function activate(context: vscode.ExtensionContext){
         let array_output = indent+ "for(auto& i : " + words[k] + ") std::cout<<i<<\" \";\n"+
         indent+"std::cout<<std::endl";
 
-        const succes = await editor.edit(edit_builder => {
+        const succes = editor.edit(edit_builder => {
             edit_builder.replace(selection, array_output);
         });
         if(!succes) {
@@ -115,7 +115,7 @@ export function activate(context: vscode.ExtensionContext){
     // Generates a defenition of an array with elements of chosen type, with chosen name and read his elements from cin
     // Command Palette name: Generate an array input from cin
     // Usage: <type> <name> <size>
-    const input_command = vscode.commands.registerCommand('autoArray.input', async () =>{
+    const input_command = vscode.commands.registerCommand('autoArray.input', () =>{
         const editor = vscode.window.activeTextEditor;
 
         if(!editor){
@@ -152,7 +152,7 @@ export function activate(context: vscode.ExtensionContext){
         let array_input = indent+words[k] + " " + words[k+1] + "["+words[k+2]+"];\n" + 
         indent+ "for(auto& i : " + words[k+1] + ") std::cin>>i;";
 
-        const succes = await editor.edit(edit_builder => {
+        const succes = editor.edit(edit_builder => {
             edit_builder.replace(selection, array_input);
         });
         if(!succes) {
